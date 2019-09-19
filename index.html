@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+	<title>Site Name Here</title>
+</head>
+<body>
+
+<!-- -------Navigation Menu-------- -->
+  <nav class="navbar navbar-expand-lg navbar-light sticky-top bg-light">
+      <a class="navbar-brand" href="#">SiteName</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+      <div id="navbarNavDropdown" class="navbar-collapse collapse">
+          <ul class="navbar-nav mr-auto">
+<!--                 <li class="nav-item">
+                  <a class="nav-link" href="#">Features</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="#">Pricing</a>
+              </li> -->
+          </ul>
+          <ul class="navbar-nav">
+              <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Dropdown
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                      <a class="dropdown-item" href="#">View Trips</a>
+                      <a class="dropdown-item" href="#">Edit Account</a>
+                      <a class="dropdown-item" href="#">Logout</a>
+                  </div>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="#">Login</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="#">Sign Up</a>
+              </li>
+          </ul>
+      </div>
+  </nav>
+<!-- ---------End Navigation Menu------------ -->
+
+<!-- ---------Map and Top, highlighted data----------  -->
+  <div id="map" style="max-height: 500px;"></div>
+
+  <div id="summaryWrapper">
+  	<div class="row">
+  		<div class="mini ml-4 mr-2 pt-3 col-md-2">
+  			<h5>Flights</h5>
+  			<div>
+  		  	<p>Here is a bunch of more cool info about FLIGHTS that you probably dont care about!</p>				
+  			</div>
+  			<div>
+  		  	<p>Here is a bunch of more cool info about FLIGHTS that you probably dont care about!</p>				
+  			</div>
+  			<div>
+  		  	<p>Here is a bunch of more cool info about FLIGHTS that you probably dont care about!</p>				
+  			</div>  			
+		  </div>
+		  <div class="mini mx-2 pt-3 col-md-2">
+		  	<h5>Hotels</h5>
+  			<div>
+  		  	<p>Here is a bunch of more cool info about HOTELS that you probably dont care about!</p>				
+  			</div>
+  			<div>
+  		  	<p>Here is a bunch of more cool info about HOTELS that you probably dont care about!</p>				
+  			</div>
+  			<div>
+  		  	<p>Here is a bunch of more cool info about HOTELS that you probably dont care about!</p>				
+  			</div> 
+		  </div>
+		  <div class="mini mx-2 pt-3 col-md-2">
+		  	<h5>Events</h5>
+  			<div>
+  		  	<p>Here is a bunch of more cool info about EVENTS that you probably dont care about!</p>				
+  			</div>
+  			<div>
+  		  	<p>Here is a bunch of more cool info about EVENTS that you probably dont care about!</p>				
+  			</div>
+  			<div>
+  		  	<p>Here is a bunch of more cool info about EVENTS that you probably dont care about!</p>				
+  			</div> 
+		  </div>
+	  </div>
+  </div>
+<!-- -----------End Map wrapper section------------- -->
+
+
+<!-- ----------More info section for full lists of flights,etc------------ -->
+	<div id="bottomWrapper">
+		<div class="row py-3">
+			<div class="col-md-8 pr-0">
+				<div class="pt-3" id="extFlights">
+				  <div class="container extInfo">
+				  	<div class="row">
+					  	<h1>Expanded Flights</h1>
+						</div>
+				  	<div class="row">
+							<div class="mb-2 col-md-12">
+								<div class="card border-0">
+									<div class="card-body">
+										<div class="row">
+											<div class="col-md-2">
+												<img alt="logo" src="#">
+											</div>
+											<div class="col-md-5">
+												<p>Airline: </p>
+												<p>From: </p>
+												<p>Departure Time: </p>
+											</div>
+											<div class="col-md-5">
+												<p>Cost: </p>
+												<p>To: </p>
+												<p>Arrival Time: </p>									
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="mb-2 col-md-12">
+								<div class="card border-0">
+									<div class="card-body">
+										<div class="row">
+											<div class="col-md-2">
+												<img alt="logo" src="#">
+											</div>
+											<div class="col-md-5">
+												<p>Airline: </p>
+												<p>From: </p>
+												<p>Departure Time: </p>
+											</div>
+											<div class="col-md-5">
+												<p>Cost: </p>
+												<p>To: </p>
+												<p>Arrival Time: </p>									
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+				  </div>
+				</div>
+				<div id="extHotels">
+				  <div class="container extInfo">
+				  	<div class="row">
+					  	<h1>Expanded Hotels</h1>
+						</div>
+				  	<div class="row">
+							<div class="mb-2 col-md-12">
+								<div class="card border-0">
+									<div class="card-body">
+										<div class="row">
+											<div class="col-md-2">
+												<img alt="logo" src="#">
+											</div>
+											<div class="col-md-5">
+												<p>Hotel: </p>
+												<p>Address: </p>
+												<p>Check in: </p>
+											</div>
+											<div class="col-md-5">
+												<p>Cost: </p>
+												<p>To: </p>
+												<p>Check out: </p>									
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="mb-2 col-md-12">
+								<div class="card border-0">
+									<div class="card-body">
+										<div class="row">
+											<div class="col-md-2">
+												<img alt="logo" src="#">
+											</div>
+											<div class="col-md-5">
+												<p>Hotel: </p>
+												<p>Address: </p>
+												<p>Check in: </p>
+											</div>
+											<div class="col-md-5">
+												<p>Cost: </p>
+												<p>To: </p>
+												<p>Check out: </p>									
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+				  </div>
+				</div>
+				<div id="extEvents">
+				  <div class="container extInfo">
+				  	<div class="row">
+					  	<h1>Expanded Events</h1>
+			  		</div>
+				  </div>
+				</div>
+			</div>
+			<!-- TEMP IMAGE GRID PLACEHOLDERS, SWITCH FOR IMG ELE WHEN READY -->
+			<div class="col-md-4 py-4 pl-4 pr-0" id="imageGrid">
+				<div class="row">
+					<div class="imgPlaceholder col-md-6">
+						<p>content 1</p>
+					</div>
+					<div class="imgPlaceholder col-md-6">
+						<p>content 2</p>
+					</div>
+					<div class="imgPlaceholder col-md-6">
+						<p>content 3</p>
+					</div>
+					<div class="imgPlaceholder col-md-6">
+						<p>content 4</p>
+					</div>
+					<div class="imgPlaceholder col-md-6">
+						<p>content 5</p>
+					</div>
+					<div class="imgPlaceholder col-md-6">
+						<p>content 6</p>
+					</div>
+					<div class="imgPlaceholder col-md-6">
+						<p>content 7</p>
+					</div>
+					<div class="imgPlaceholder col-md-6">
+						<p>content 8</p>
+					</div>
+				</div>												
+			</div>
+		</div>
+	</div>
+<!-- ----------End Additional Info Section------------- -->
+
+	<div id="footer">
+		<div class="container">
+			<div class="row pt-3 justify-content-center text-center">
+				<p>Designed and created by Byte Knights... Blah Blah, Put Footer info here</p>
+			</div>
+		</div>
+	</div>
+
+
+<!-- ------APIs, libraries, and framework links-------- -->
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+	<script type="text/javascript" src="map.js"></script>
+  <!-- <script src="https://maps.googleapis.com/maps/api/js?key=APIKEYHERE&callback=initMap" async defer></script> -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+</body>
+</html>
