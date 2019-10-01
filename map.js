@@ -66,7 +66,6 @@ function animateDiv(){
 function getEvents(lat, lng){
 
   var eventbriteToken = '';
-  // var $events = $("#events");
 
   $.get('https://www.eventbriteapi.com/v3/events/search/?token=' + eventbriteToken 
     + '&location.longitude=' + lng 
@@ -76,15 +75,15 @@ function getEvents(lat, lng){
     console.log(res.events.length);
 
     if(res.events.length) {
-      // var s = "<ul class='eventList'>";
-      for(var i = 0; i < 4; i++) {
+      for(var i = 0; i < 5; i++) {
         var event = res.events[i];
+
+        if (i < 3)
+        	addToMinis(event);
 
         makeCard(event);
 
         console.dir(event);
-
-
       }
     }
   });
@@ -94,23 +93,34 @@ function makeCard(event){
 
   let eventImageURL;
 
+  //Ensure event still loads even without a Logo Image
   if (event.logo != null && event.logo != undefined)
     eventImageURL = event.logo.url;
   else
     eventImageURL = "#";
 
-  $('#eventContainer').append('<a class="cardLink center-block img-responsive" target="_blank" href=' + event.url + '<div class="row"><div class="mb-2 col-md-12">'+
-    '<div class="card border-0"><div class="card-body"><div class="row">' +
-    '<div class="col-md-2"><img alt="No image :(" src="' + eventImageURL + '"></div>' + //HERE
-    '<div class="col-md-5"><p>' + event.name.text.substring(0, 25) + '...</p><p>Area: ' + event.venue.address.city + 
-    '</p><p>Start Time: ' + event.start.local + '</p></div>' +
-    '<div class="col-md-5"><p>&nbsp</p><p>To: </p><p>End time: ' + event.end.local + '</p></div>' +
-    '</div></div></div></div></div></a>');
-
+	//Prewritten Card with jquery, can modify for Flight/Hotel/Etc
+	$('#eventContainer').append('<a class="cardLink" target="_blank" href=' + event.url + '><div class="row"><div class="mb-2 col-md-12">'+
+	'<div class="card border-0"><div class="card-body"><div class="row">' +
+	'<div class="col-md-2"><img alt="No image :(" src="' + eventImageURL + '"></div>' + //HERE
+	'<div class="col-md-10"><div class="row"><h5>' + event.name.text + '</h5></div><div class="row"><div class="col-md-6 p-0"><p>Address: ' 
+	+ event.venue.address.city + 
+	'</p></div><div class="col-md-6 p-0"><p>Start Time: ' + convertDate(event.start.local) + '</p></div></div>' +
+	'<div class="row"><p>' + event.description.text.substring(0,350) + '...  <span>Read More</span></p></div>' +
+	'</div></div></div></div></div></div></a>');
 }
 
+//Add content to small section
+function addToMinis(event){
+	$('#eventMini').append('<div class="miniText"><p><strong>' + event.name.text.substring(0,20) + '...</strong><br>' + event.description.text.substring(0,70) + '...</p></div>')
+}
+
+//Clear all content for new selection
 function deleteCards(){
   $('.cardLink').remove();
-
+  $('.miniText').remove();
 }
 
+function convertDate(date) {
+    return new Date(date).toLocaleString();
+}

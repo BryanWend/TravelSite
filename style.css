@@ -38,6 +38,12 @@ html, body{
 	color: black;
 }
 
+span{
+	text-decoration: underline;
+	text-decoration-color: blue;
+	color: blue;
+}
+
 #bottomWrapper img{
 	width: 100%;
 }
