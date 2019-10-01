@@ -71,7 +71,7 @@ function animateDiv(){
 
 function getEvents(lat, lng){
 
-  var eventbriteToken = 'KQP66HTU56E2BB7B3LML';
+  var eventbriteToken = '';
 
   $.get('https://www.eventbriteapi.com/v3/events/search/?token=' + eventbriteToken 
     + '&location.longitude=' + lng 
