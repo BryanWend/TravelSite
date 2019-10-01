@@ -52,8 +52,8 @@
     <script>
          function LogOn()
         {
-            var name = document.getElementById('username');
-            var password = document.getElementById('password');
+            var name = document.getElementById('UserName');
+            var password = document.getElementById('PassWord');
             var webMethod = "ProjectServices.asmx/LogOn";
             var parameters = "{\"uid\":\"" + encodeURI(name) + "\",\"pass\":\"" + encodeURI(password) + "\"}";
 
