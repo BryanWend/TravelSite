@@ -49,6 +49,39 @@
             width: auto;
         }
     </style>
+    <script>
+         function LogOn()
+        {
+            var name = document.getElementById('username');
+            var password = document.getElementById('password');
+            var webMethod = "ProjectServices.asmx/LogOn";
+            var parameters = "{\"uid\":\"" + encodeURI(name) + "\",\"pass\":\"" + encodeURI(password) + "\"}";
+
+            //jQuery ajax method
+            $.ajax({
+                type: "POST",
+                url: webMethod,
+                data: parameters,
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (msg) {
+					
+					if (msg.d) {
+						window.Location="index.html";
+					}
+					else {
+			
+						alert("logon failed");
+					}
+				},
+				error: function (e) {
+					alert("no...");
+				}
+            });
+
+              
+        }
+    </script>
 </head>
 <body>
     <!-- -------Navigation Menu-------- -->
@@ -97,10 +130,10 @@
                         <p style="font-family: 'Caudex', serif;">To an existing GeoTravlr account</p>
                         <form class="signIn" style="font-family: 'Caudex', serif;">
                             <strong>GeoTravlr account name</strong><br />
-                            <input type="text" name="userName" /><br /><br />
+                            <input type="text" id="userName" /><br /><br />
                             <strong>password</strong><br>
-                            <input type="text" name="password" /><br /><br />
-                            <input id="signInBtn" type="submit" name="signIn" value="Sign in" />
+                            <input type="text" id="password" /><br /><br />
+                            <input id="signInBtn" type="submit" name="signIn" value="Sign in" onclick="LogOn()"/>
                         </form>
                     </div>
                 </td>
