@@ -1,0 +1,129 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Sign in GeoTravlr</title>
+    <link rel="shortcut icon" type="image/x-icon" href="logo.ico" />
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Barriecito|Caudex|Neucha|Vesper+Libre&display=swap" rel="stylesheet">
+    <style>
+        .mainSignContent {
+            background-color: cadetblue;
+            overflow: auto;
+        }
+
+            .mainSignContent .signIn {
+                padding-right: 150px;
+            }
+
+            .mainSignContent .signUp {
+                padding-left: 100px;
+                padding-top: 92px;
+                border-left: solid 1px skyblue;
+                border-left-style: ridge;
+            }
+
+        .signIn input {
+            border-radius: 10px;
+            background-color: cadetblue;
+        }
+
+        #signInBtn {
+            border-radius: 5px;
+            border-style: groove;
+            background-color: lightgrey;
+        }
+
+        .signUp input {
+            border-radius: 5px;
+            border-style: groove;
+            background-color: lightgrey;
+        }
+
+        #footerLogo {
+            float: left;
+            overflow: auto;
+            height: 56px;
+            width: auto;
+        }
+    </style>
+</head>
+<body>
+    <!-- -------Navigation Menu-------- -->
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top bg-light">
+        <a class="navbar-brand" href="index.html" style="font-family: 'Barriecito', cursive;">GeoTravlr</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div id="navbarNavDropdown" class="navbar-collapse collapse">
+            <ul class="navbar-nav mr-auto">
+                <!--                 <li class="nav-item">
+                                  <a class="nav-link" href="#">Features</a>
+                              </li>
+                              <li class="nav-item">
+                                  <a class="nav-link" href="#">Pricing</a>
+                              </li> -->
+            </ul>
+            <ul class="navbar-nav">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Dropdown
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="#">View Trips</a>
+                        <a class="dropdown-item" href="#">Edit Account</a>
+                        <a class="dropdown-item" href="#">Logout</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="loginPage.html">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Sign Up</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!-- ---------End Navigation Menu------------ -->
+    <!-- ---------Login Content------------ -->
+    <div class="mainSignContent">
+        <table>
+            <tr>
+                <td>
+                    <div class="signIn">
+                        <h2 style="font-family: 'Neucha', cursive;">SIGN IN</h2>
+                        <p style="font-family: 'Caudex', serif;">To an existing GeoTravlr account</p>
+                        <form class="signIn" style="font-family: 'Caudex', serif;">
+                            <strong>GeoTravlr account name</strong><br />
+                            <input type="text" name="userName" /><br /><br />
+                            <strong>password</strong><br>
+                            <input type="text" name="password" /><br /><br />
+                            <input id="signInBtn" type="submit" name="signIn" value="Sign in" />
+                        </form>
+                    </div>
+                </td>
+                <td>
+                    <div class="signUp">
+                        <h2 style="font-family: 'Neucha', cursive;">CREAT</h2>
+                        <p style="font-family: 'Caudex', serif;">a new GeoTravlr account!</p>
+                        <p style="font-family: 'Caudex', serif;">New to GeoTravlr? <br />Create a new account for free to get your travel start!</p>
+                        <input id="signUpBtn" type="submit" name="signUp" value="Join GeoTravlr" />
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <!-- ---------End Login Content------------ -->
+
+    <div id="footer">
+        <img id="footerLogo" src="logo.jpg" alt="GeoTravlr Logo">
+        <div class="container">
+            <div class="row pt-3 justify-content-center text-center">
+                <p>Designed and created by Byte Knights</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
