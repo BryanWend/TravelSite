@@ -16,17 +16,21 @@ function initMap() {
 function placeMarker(position, map) {
   //Remove previous selection
   clearMarkers();
-
+  console.log(position);
+  console.log(position.lat);
+  console.log(position.lat + 10);
   //Place marker
   let marker = new google.maps.Marker({
     position: position,
     map: map
   });
 
+  //Get marker position for APIs
   let lat = marker.getPosition().lat();
   let lng = marker.getPosition().lng();
 
-  console.log("Lat: " + lat + ", Lng: " + lng);
+  let latlng = new google.maps.LatLng(lat, lng - 5);
+
 
   if(markers.length > 0)
     deleteCards();
@@ -36,8 +40,10 @@ function placeMarker(position, map) {
   markers.push(marker);
 
   animateDiv();
+
   //Center on marker
-  map.panTo(position);
+  map.panTo(latlng);
+  map.setZoom(7);
 }
 
 function clearMarkers(){
@@ -65,7 +71,7 @@ function animateDiv(){
 
 function getEvents(lat, lng){
 
-  var eventbriteToken = '';
+  var eventbriteToken = 'KQP66HTU56E2BB7B3LML';
 
   $.get('https://www.eventbriteapi.com/v3/events/search/?token=' + eventbriteToken 
     + '&location.longitude=' + lng 
@@ -89,6 +95,7 @@ function getEvents(lat, lng){
   });
 }
 
+//Currently designed for Events but can be modified to work for all 3 categories to avoid rewriting
 function makeCard(event){
 
   let eventImageURL;
@@ -110,7 +117,7 @@ function makeCard(event){
 	'</div></div></div></div></div></div></a>');
 }
 
-//Add content to small section
+//Add content to small section tied to map
 function addToMinis(event){
 	$('#eventMini').append('<div class="miniText"><p><strong>' + event.name.text.substring(0,20) + '...</strong><br>' + event.description.text.substring(0,70) + '...</p></div>')
 }
