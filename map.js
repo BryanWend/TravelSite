@@ -72,6 +72,7 @@ function animateDiv(){
 function getEvents(lat, lng){
 
   var eventbriteToken = '';
+  var flickrAPIKey = '';
 
   $.get('https://www.eventbriteapi.com/v3/events/search/?token=' + eventbriteToken 
     + '&location.longitude=' + lng 
@@ -93,7 +94,45 @@ function getEvents(lat, lng){
       }
     }
   });
+
+  $.get('https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=' + flickrAPIKey 
+    + '&lat=' + lat 
+    + '&lon=' + lng 
+    + '&radius=32&text=nature&format=json&nojsoncallback=1', function(res) {
+
+    // console.log(res.events.length);
+
+    // if(res.events.length) {
+    //   // var s = "<ul class='eventList'>";
+    //   for(var i = 0; i < 4; i++) {
+    //     var event = res.events[i];
+
+    //     // makeCard(event);
+
+    //https://farm{farm-id}.staticflickr.com/{server-id}/{id}_{secret}.jpg
+      for (let i = 0; i < 20; i++){
+        let flickrImageURL = ('https://farm' + res.photos.photo[i].farm + '.staticflickr.com/' +  res.photos.photo[i].server + '/' + res.photos.photo[i].id + '_' + res.photos.photo[i].secret + '.jpg');
+        
+        console.log(flickrImageURL);
+        addImage(flickrImageURL);
+      }
+      console.log(res);
+
+
+    //   }
+    // }
+  });
+
 }
+
+
+
+function addImage(imageURL){
+
+  $('#flickrImages').append('<div class="col-md-6 p-0 imgContainer"><img class="img-responsive flickrImg" src=' + imageURL + '></div>');
+
+}
+
 
 //Currently designed for Events but can be modified to work for all 3 categories to avoid rewriting
 function makeCard(event){
@@ -126,6 +165,7 @@ function addToMinis(event){
 function deleteCards(){
   $('.cardLink').remove();
   $('.miniText').remove();
+  $('.imgContainer').remove();
 }
 
 function convertDate(date) {

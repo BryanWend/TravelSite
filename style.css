@@ -49,23 +49,20 @@ span{
 }
 
 /*-------TEMP FOR IMAGE SHOWCASE TO GROUP---------*/
-.imgPlaceholder{
-	height: 					200px;
-	padding: 					0 !important;
+.flickrImg{
+	height: 					175px;
+	/*width: auto;*/
+	/*padding: 					0 !important;*/
+	/*overflow: hidden;*/
+}
+
+.imgContainer{
+	
+	height: 175px;
+	overflow: hidden;
 
 }
-.imgPlaceholder:nth-child(2n+0){
-	background-color: red;
-}
-.imgPlaceholder:nth-child(4n+0){
-	background-color: blue;
-}
-.imgPlaceholder:nth-child(3n+0){
-	background-color: green;
-}
-.imgPlaceholder:nth-child(1,5){
-	background-color: yellow;
-}
+
 /*--------------------------------*/
 
 #footer{
