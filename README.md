@@ -1,2 +1,2 @@
-# ProjectTemplate
-copy this code into your own repository, and use it for your project as you see fit!
+# TravelSite
+Click anywhere on a globe and view how to get there, stay there, and enjoy your time there
