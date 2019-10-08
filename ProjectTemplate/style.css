@@ -1,71 +1,137 @@
-html, body{
-	overflow-x: 			hidden;
-	height: 					100%;
-	margin: 					0;
-	padding: 					0;
+html, body {
+    overflow-x: hidden;
+    height: 100%;
+    margin: 0;
+    padding: 0;
 }
+
+.navbar-custom {
+    background: rgb(33,137,126);
+}
+    /* change the brand and text color */
+    .navbar-custom .navbar-brand,
+    .navbar-custom .navbar-text {
+        color: rgb(255,255,255);
+    }
+    /* change the link color */
+    .navbar-custom .navbar-nav .nav-link {
+        color: rgb(255,255,255);
+    }
+    /* change the color of active or hovered links */
+    .navbar-custom .nav-item.active .nav-link,
+    .navbar-custom .nav-item:hover .nav-link {
+        color: #ffffff;
+    }
 
 #map {
-	height: 					100%;
-	background-color: red;
+    height: 100%;
+    background-color: red;
 }
 
-#summaryWrapper{
-	margin-top: 			-17%;
-	overflow: 				hidden;
+#wrap {
+    min-height: 1000px;
 }
 
-.mini{
-	background-color: white;
-	position: 				relative;
-	top: 							750px;
+#summaryWrapper {
+    margin-top: -17%;
+    overflow: hidden;
+    min-height: 350px;
 }
 
-.mini p{
-	border-top: 			4px double black;
+    #summaryWrapper a {
+        color: black;
+        text-decoration: none;
+    }
+
+
+.mini {
+    background-color: white;
+    position: relative;
+    top: 750px;
 }
+
+    .mini p {
+        border-top: 4px double black;
+        color: #37474F;
+    }
 
 .card {
-	box-shadow: 			0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
-.card:hover{
-	box-shadow: 			0 8px 16px 0 rgba(0,0,0,0.5);
+    .card:hover {
+        box-shadow: 0 8px 16px 0 rgba(0,0,0,0.5);
+    }
+
+.cardLink, .cardLink:hover {
+    text-decoration: none;
+    color: black;
 }
 
-.cardLink, .cardLink:hover{
-	text-decoration: none;
-	color: black;
+.cardBGColor {
+    background: rgba(33,137,126, .35);
 }
 
-span{
-	text-decoration: underline;
-	text-decoration-color: blue;
-	color: blue;
+span {
+    text-decoration: underline;
+    text-decoration-color: blue;
+    color: blue;
 }
 
-#bottomWrapper img{
-	width: 100%;
+#bottomWrapper img {
+    width: 100%;
 }
 
-/*-------TEMP FOR IMAGE SHOWCASE TO GROUP---------*/
-.flickrImg{
-	height: 					175px;
-	/*width: auto;*/
-	/*padding: 					0 !important;*/
-	/*overflow: hidden;*/
+#bottomWrapper h1, #bottomWrapper h5, #bottomWrapper p {
+    color: #37474F;
 }
 
-.imgContainer{
-	
-	height: 175px;
-	overflow: hidden;
+.gridColor {
+    background: rgba(68,68,68,.3);
+}
 
+.flickrImg {
+    height: 175px;
+    object-fit: cover;
+}
+
+.imgContainer {
+    height: 175px;
+    overflow: hidden;
 }
 
 /*--------------------------------*/
 
-#footer{
-	background-color: 	#444444;
-	color: 							rgba(255,255,255,.7);
+#footer {
+    background-color: #444444;
+    color: rgba(255,255,255,.7);
+}
+
+
+/*Log on page----------------------*/
+
+.mainSignContent {
+    background: rgba(33,137,126, .35);
+    height: 100%;
+}
+
+    .mainSignContent .signUp {
+        border-left: solid 1px grey;
+        border-left-style: ridge;
+    }
+
+.signIn input {
+    border-radius: 10px;
+}
+
+#signInBtn {
+    border-radius: 5px;
+    border-style: groove;
+    background-color: lightgrey;
+}
+
+.signUp input {
+    border-radius: 5px;
+    border-style: groove;
+    background-color: lightgrey;
 }

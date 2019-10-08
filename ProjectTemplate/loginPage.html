@@ -2,105 +2,30 @@
 
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
+
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Sign in GeoTravlr</title>
     <link rel="shortcut icon" type="image/x-icon" href="logo.ico" />
     <link rel="stylesheet" type="text/css" href="style.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Barriecito|Caudex|Neucha|Vesper+Libre&display=swap" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="./map.js"></script>
 
-    <style>
-        .mainSignContent {
-            background-color: cadetblue;
-            overflow: auto;
-        }
-
-            .mainSignContent .signIn {
-                padding-right: 150px;
-            }
-
-            .mainSignContent .signUp {
-                padding-left: 100px;
-                padding-top: 92px;
-                border-left: solid 1px skyblue;
-                border-left-style: ridge;
-            }
-
-        .signIn input {
-            border-radius: 10px;
-            background-color: cadetblue;
-        }
-
-        #signInBtn {
-            border-radius: 5px;
-            border-style: groove;
-            background-color: lightgrey;
-        }
-
-        .signUp input {
-            border-radius: 5px;
-            border-style: groove;
-            background-color: lightgrey;
-        }
-
-        #footerLogo {
-            float: left;
-            overflow: auto;
-            height: 56px;
-            width: auto;
-        }
-    </style>
-    <script>
-        function LogOn(name,password) {
-          
-            var webMethod = "ProjectServices.asmx/LogOn";
-            var parameters = "{\"uid\":\"" + encodeURI(name) + "\",\"pass\":\"" + encodeURI(password) + "\"}";
-            //jQuery ajax method
-            $.ajax({
-                type: "POST",
-                url: webMethod,
-                data: parameters,
-                contentType: "application/json; charset=utf-8",
-                dataType: "json",
-                success: function (msg) {
-
-                    if (msg.d) {
-                        alert("logon succeed");
-                        window.location.replace("./index.html");
-                    }
-                    else {
-
-                        alert("logon failed");
-                    }
-                },
-                error: function (e) {
-                    alert("no...");
-                }
-            });
-
-
-        }
-    </script>
 </head>
 <body>
     <!-- -------Navigation Menu-------- -->
-    <nav class="navbar navbar-expand-lg navbar-light sticky-top bg-light">
+    <nav class="navbar navbar-expand-lg navbar-custom sticky-top">
         <a class="navbar-brand" href="index.html" style="font-family: 'Barriecito', cursive;">GeoTravlr</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div id="navbarNavDropdown" class="navbar-collapse collapse">
             <ul class="navbar-nav mr-auto">
-                <!--                 <li class="nav-item">
-                                  <a class="nav-link" href="#">Features</a>
-                              </li>
-                              <li class="nav-item">
-                                  <a class="nav-link" href="#">Pricing</a>
-                              </li> -->
             </ul>
             <ul class="navbar-nav">
-                <li class="nav-item dropdown">
+                <li class="nav-item dropdown d-none">
                     <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Dropdown
                     </a>
@@ -122,42 +47,36 @@
     <!-- ---------End Navigation Menu------------ -->
     <!-- ---------Login Content------------ -->
     <div class="mainSignContent">
-        <table>
-            <tr>
-                <td>
-                    <div class="signIn">
-                        <h2 style="font-family: 'Neucha', cursive;">SIGN IN</h2>
-                        <p style="font-family: 'Caudex', serif;">To an existing GeoTravlr account</p>
-                        <strong>GeoTravlr account name</strong><br />
-                        <form onsubmit="LogOn($('#newLogonId').val(), $('#newLogonPassword').val()); return false;">                         
-                            <div>
-                                I D: <input type="text" id="newLogonId" />
-                            </div>
-                            <div>
-                                Pwd: <input type="password" id="newLogonPassword" />
-                            </div>
-                            
-                            <div>
-                                <button type="submit">Go!</button>
-                            </div>
-                        </form>
+        <div class="row px-3 pl-3 py-3">
+            <div class="col-md-3 pt-3 mr-4 signIn">
+                <h2 style="font-family: 'Neucha', cursive;">SIGN IN</h2>
+                <p style="font-family: 'Caudex', serif;">To an existing GeoTravlr account!</p>
+                <form class="signIn" style="font-family: 'Caudex', serif;" onsubmit="LogOn($('#newLogonId').val(), $('#newLogonPassword').val()); return false;">
+                    <div class="form-group">
+                        <label for="userName">Username</label>
+                        <input type="text" class="form-control" id="newLogonId">
                     </div>
-                </td>
-                <td>
-                    <div class="signUp">
-                        <h2 style="font-family: 'Neucha', cursive;">CREAT</h2>
-                        <p style="font-family: 'Caudex', serif;">a new GeoTravlr account!</p>
-                        <p style="font-family: 'Caudex', serif;">New to GeoTravlr? <br />Create a new account for free to get your travel start!</p>
-                        <input id="signUpBtn" type="submit" name="signUp" value="Join GeoTravlr" />
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" class="form-control" id="newLogonPassword">
                     </div>
-                </td>
-            </tr>
-        </table>
+                    <div class="form-group">
+                        <button type="submit">Log On</button>
+                    </div>
+                </form>
+            </div>
+
+            <div class="col-md-4 pt-3 signUp">
+                <h2 style="font-family: 'Neucha', cursive;">CREATE</h2>
+                <p style="font-family: 'Caudex', serif;">A new GeoTravlr account!</p>
+                <p style="font-family: 'Caudex', serif;">Try your free account to get your adventures started!</p>
+                <input id="signUpBtn" type="submit" name="signUp" value="Join GeoTravlr" />
+            </div>
     </div>
+</div>
     <!-- ---------End Login Content------------ -->
 
     <div id="footer">
-        <img id="footerLogo" src="logo.jpg" alt="GeoTravlr Logo">
         <div class="container">
             <div class="row pt-3 justify-content-center text-center">
                 <p>Designed and created by Byte Knights</p>
