@@ -1,0 +1,168 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta charset="utf-8" />
+    <title>GeoTravlr Password Change Page</title>
+    <link rel="shortcut icon" type="image/x-icon" href="../logo.ico" />
+    <link rel="stylesheet" type="text/css" href="../style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Barriecito|Caudex|Neucha|Vesper+Libre&display=swap" rel="stylesheet">
+    <style>
+        .profileNav {
+            float: left;
+            background-color: antiquewhite;
+            padding-right: 10px;
+            margin-right: 23px;
+            border-bottom-right-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+
+        #editPasswordBody {
+            background-color: cadetblue;
+            overflow: auto;
+            padding-bottom: 20px;
+        }
+
+        #savePassword {
+            border-radius: 5px;
+            border-style: groove;
+            background-color: lightgrey;
+        }
+
+        #editPasswordBody input {
+            border-radius: 10px;
+            background-color: cadetblue;
+        }
+
+        .profileNav a:link, .profileNav a:visited, .profileNav a:active {
+            color: crimson;
+            text-decoration: none;
+        }
+
+        #profile, #infoEdit, #passwordEdit, #orderView, #userReport, #historyView {
+            height: 25px;
+            width: 200px;
+            font-family: 'Caudex', serif;
+            padding: 5px;
+            margin: 5px;
+            background-color: antiquewhite;
+            transition: width 2s, height 2s, transform 1s;
+        }
+
+            #profile:hover, #infoEdit:hover, #passwordEdit:hover, #orderView:hover, #userReport:hover, #historyView:hover {
+                transform: rotate(5deg);
+                width: 200px;
+                height: 40px;
+                animation-name: profileNav;
+                animation-duration: 4s;
+                animation-direction: alternate;
+                animation-iteration-count: infinite;
+                text-decoration: none;
+            }
+
+        @keyframes profileNav {
+            from {
+                background-color: antiquewhite;
+                font-size: 100%;
+                text-indent: 0px;
+            }
+
+            to {
+                border-radius: 10px;
+                background-color: cadetblue;
+                font-size: 1.05em;
+                text-indent: 15px;
+            }
+        }
+
+        #passwordEdit {
+            background-color: darkgray;
+            border-radius: 5px;
+        }
+
+        #footerLogo {
+            float: left;
+            overflow: auto;
+            height: 56px;
+            width: auto;
+        }
+    </style>
+    <script>
+
+    </script>
+</head>
+<body>
+    <!-- -------Navigation Menu-------- -->
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top bg-light">
+        <a class="navbar-brand" href="index.html" style="font-family: 'Barriecito', cursive;">GeoTravlr</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div id="navbarNavDropdown" class="navbar-collapse collapse">
+            <ul class="navbar-nav mr-auto">
+                <!--                 <li class="nav-item">
+                                  <a class="nav-link" href="#">Features</a>
+                              </li>
+                              <li class="nav-item">
+                                  <a class="nav-link" href="#">Pricing</a>
+                              </li> -->
+            </ul>
+            <ul class="navbar-nav">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Dropdown
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="#">View Trips</a>
+                        <a class="dropdown-item" href="#">Edit Account</a>
+                        <a class="dropdown-item" href="#">Logout</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="loginPage.html">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Sign Up</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!-- ---------End Navigation Menu------------ -->
+    <!-- ---------Profile Navigation Menu------------ -->
+
+    <div class="profileNav">
+        <div id="profile"><a href="../profilePage.html">My Profile</a></div>
+        <div id="infoEdit"><a href="editInfo.html">Edit My Information</a></div>
+        <div id="passwordEdit"><a href="editPsw.html" style="color:beige;">Change My Password</a></div>
+        <div id="historyView"><a href="historyView.html">Explored History</a></div>
+        <div id="orderView"><a href="orderView.html">View My Orders</a></div>
+        <div id="userReport"><a href="userReport.html">Reporting</a></div>
+    </div>
+    <!-- ---------End Profile Navigation Menu------------ -->
+    <!-- ---------Edit My Password Body------------ -->
+    <div id="editPasswordBody">
+        <h1 id="editMyPasswordTitle" style=" padding-bottom:5px; border-bottom: groove crimson 1px;">Change My Password</h1>
+        <h2 id="ProfileUserId">##UserId##</h2>
+        <div id="profileDetail">
+            User Class: ##Normal##<br />
+            New Password:
+            <input type="password" name="newPassword" />
+        </div>
+        <button id="savePassword">Save</button>
+    </div>
+    <!-- ---------End Edit My Password Body------------ -->
+
+
+
+    <div id="footer" style="clear:both; overflow: auto;">
+        <img id="footerLogo" src="../logo.jpg" alt="GeoTravlr Logo">
+        <div class="container">
+            <div class="row pt-3 justify-content-center text-center">
+                <p>Designed and created by Byte Knights</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
